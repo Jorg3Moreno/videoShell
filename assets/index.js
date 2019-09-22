@@ -7,8 +7,8 @@ const btnPlayPause = document.getElementById("btnPlayPause");
 const btnMuteUnmute = document.getElementById("btnMuteUnmute");
 
 const player = new MediaPlayer({
-  el: video
-  // plugins: [new AutoPlay()]
+  el: video,
+  plugins: [new AutoPlay()]
 });
 
 btnPlayPause.onclick = () => player.playPause();
