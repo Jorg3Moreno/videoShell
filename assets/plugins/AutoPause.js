@@ -11,6 +11,10 @@ class AutoPause {
     });
 
     observer.observe(this.player.media);
+
+    //added event to pause video when the page is hiden
+    //and play video when page is visible
+    document.addEventListener("visibilitychange", this.handleVisibilityChange);
   }
 
   handleIntersection = entries => {
@@ -18,6 +22,15 @@ class AutoPause {
 
     const isVisible = entry.intersectionRatio >= this.threshold;
 
+    if (isVisible) {
+      this.player.playPause();
+    } else {
+      this.player.playPause();
+    }
+  };
+
+  handleVisibilityChange = () => {
+    const isVisible = document.visibilityState === "visible";
     if (isVisible) {
       this.player.playPause();
     } else {
