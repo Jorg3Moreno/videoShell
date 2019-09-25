@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"
+    "start": "parcel index.html exercises/index.html exercises/**/*.html"
   },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jorg3Moreno/videoShell.git"
@@ -23,6 +26,8 @@
   },
   "homepage": "https://github.com/Jorg3Moreno/videoShell#readme",
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.6.3"
   }
 }

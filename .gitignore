@@ -5,6 +5,8 @@
 /target/www/**
 /src/test/javascript/coverage/
 /assets/BigBuckBunny.mp4
+.cache
+dist
 
 ######################
 # Node

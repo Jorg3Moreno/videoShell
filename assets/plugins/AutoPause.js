@@ -1,6 +1,8 @@
 class AutoPause {
   constructor() {
     this.threshold = 0.25;
+    this.handleIntersection = this.handleIntersection.bind(this);
+    this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
   }
 
   run(player) {
@@ -17,7 +19,7 @@ class AutoPause {
     document.addEventListener("visibilitychange", this.handleVisibilityChange);
   }
 
-  handleIntersection = entries => {
+  handleIntersection(entries) {
     const entry = entries[0];
 
     const isVisible = entry.intersectionRatio >= this.threshold;
@@ -27,16 +29,16 @@ class AutoPause {
     } else {
       this.player.playPause();
     }
-  };
+  }
 
-  handleVisibilityChange = () => {
+  handleVisibilityChange() {
     const isVisible = document.visibilityState === "visible";
     if (isVisible) {
       this.player.playPause();
     } else {
       this.player.playPause();
     }
-  };
+  }
 }
 
 export default AutoPause;
