@@ -1,11 +1,11 @@
 // Cuando se usa type module hay que especificar *.js
-import MediaPlayer from "./MediaPlayer.js";
-import AutoPlay from "./plugins/AutoPlay.js";
-import AutoPause from "./plugins/AutoPause.js";
+import MediaPlayer from "./MediaPlayer";
+import AutoPlay from "./plugins/AutoPlay";
+import AutoPause from "./plugins/AutoPause";
 
-const video = document.querySelector("video");
-const btnPlayPause = document.getElementById("btnPlayPause");
-const btnMuteUnmute = document.getElementById("btnMuteUnmute");
+const video: HTMLElement = document.querySelector("video");
+const btnPlayPause: HTMLElement = document.getElementById("btnPlayPause");
+const btnMuteUnmute: HTMLElement = document.getElementById("btnMuteUnmute");
 
 const player = new MediaPlayer({
   el: video,
