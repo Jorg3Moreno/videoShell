@@ -2,6 +2,7 @@
 import MediaPlayer from "./MediaPlayer";
 import AutoPlay from "./plugins/AutoPlay";
 import AutoPause from "./plugins/AutoPause";
+import Ads from "./plugins/Ads";
 
 const video: HTMLElement = document.querySelector("video");
 const btnPlayPause: HTMLElement = document.getElementById("btnPlayPause");
@@ -9,7 +10,7 @@ const btnMuteUnmute: HTMLElement = document.getElementById("btnMuteUnmute");
 
 const player = new MediaPlayer({
   el: video,
-  plugins: [new AutoPlay(), new AutoPause()]
+  plugins: [new AutoPlay(), new AutoPause(), new Ads()]
 });
 
 btnPlayPause.onclick = () => player.playPause();
